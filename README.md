@@ -1,5 +1,13 @@
 # Rails Template
 
+## DB設定
+
+```
+sudo -u postgres -i
+psql
+create role rails_template with createdb login password 'password';
+```
+
 ## 初期化
 
 ```
