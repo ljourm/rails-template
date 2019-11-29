@@ -76,6 +76,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (3.0.1)
     chronic (0.10.2)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
@@ -261,6 +262,7 @@ DEPENDENCIES
   acts_as_tenant
   bootsnap (>= 1.4.2)
   byebug
+  cancancan
   factory_bot_rails
   faker
   friendly_id (~> 5.2.4)
