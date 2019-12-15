@@ -35,6 +35,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'activeadmin'
 gem 'slim-rails'
+gem 'enum_help'
 gem "audited", "~> 4.9"
 
 group :development, :test do
