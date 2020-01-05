@@ -1,4 +1,5 @@
 # 標準の規約 + Railsの規約
+require: rubocop-rails
 Rails:
   Enabled: true
 
@@ -29,3 +30,15 @@ Metrics/LineLength:
 # Use nested module/class definitions instead of compact style. を無視
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+Metrics/AbcSize:
+  Max: 30
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
