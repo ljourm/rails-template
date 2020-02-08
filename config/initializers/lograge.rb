@@ -3,8 +3,6 @@ Rails.application.configure do
   config.lograge.keep_original_rails_log = true
   config.lograge.formatter = Lograge::Formatters::Json.new
 
-    config.lograge.enabled = true
-
   config.lograge.custom_payload do |controller|
     {
       request_uuid: controller.request.uuid,
