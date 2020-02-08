@@ -1,5 +1,7 @@
 # 標準の規約 + Railsの規約
-require: rubocop-rails
+require:
+  - rubocop-rails
+  - rubocop-rspec
 Rails:
   Enabled: true
 
@@ -42,3 +44,6 @@ Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
+
+RSpec/ContextWording:
+  Enabled: false
