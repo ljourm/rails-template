@@ -64,7 +64,7 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include FactoryBot::Syntax::Methods
 
-  config.before(:each) do |example|
+  config.before do |example|
     driven_by(:selenium, using: :headless_chrome, screen_size: [1400, 1400]) if example.metadata[:type] == :system
   end
 end
