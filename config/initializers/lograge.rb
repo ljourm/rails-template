@@ -3,18 +3,26 @@ Rails.application.configure do
   config.lograge.keep_original_rails_log = true
   config.lograge.formatter = Lograge::Formatters::Json.new
 
+    config.lograge.enabled = true
+
+  config.lograge.custom_payload do |controller|
+    {
+      request_uuid: controller.request.uuid,
+      original_url: controller.request.original_url,
+      remote_ip: controller.request.remote_ip,
+    }
+  end
+
   config.lograge.custom_options = lambda do |event|
     exceptions = %w(controller action format authenticity_token)
     data = {
-      level: 'INFO',
-      host: event.payload[:host],
-      hostname: event.payload[:hostname],
-      remote_ip: event.payload[:remote_ip],
-      time: Time.now.iso8601,
+      log_level: 'INFO',
+      event_time: Time.now.iso8601,
+      hostname: `hostname`.strip,
       params: event.payload[:params].except(*exceptions)
     }
     if event.payload[:exception]
-      data[:level] = 'FATAL'
+      data[:log_level] = 'FATAL'
       data[:exception] = event.payload[:exception]
       data[:exception_backtrace] = event.payload[:exception_object].backtrace[0..6]
     end
