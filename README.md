@@ -22,6 +22,14 @@ yarn install
 bundle exec rails s
 ```
 
+### Docker
+
+```
+docker-compose up -d
+docker-compose exec app bundle exec rails db:create
+docker-compose exec app bundle exec rails db:migrate
+```
+
 ## デプロイ
 
 ### Ubuntu 18.04 LTS
