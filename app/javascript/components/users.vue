@@ -6,6 +6,9 @@
         {{ user.email }}
       </div>
     </div>
+    <b-field label="Name">
+      <b-input value="Kevin Garvey" />
+    </b-field>
   </div>
 </template>
 
