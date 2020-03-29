@@ -60,6 +60,7 @@ group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-performance'
+  gem 'foreman'
 end
 
 group :test do
