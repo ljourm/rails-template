@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'homes#index'
+
+    resources :users, only: %i(index)
   end
 end
