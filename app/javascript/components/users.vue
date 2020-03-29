@@ -9,6 +9,9 @@
     <b-field label="Name">
       <b-input value="Kevin Garvey" />
     </b-field>
+    <b-button class="is-primary">
+      button
+    </b-button>
   </div>
 </template>
 
@@ -35,9 +38,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+$primary: #aaa;
+
 p {
   font-size: 2em;
   text-align: center;
+  color: $primary;
 }
 </style>
