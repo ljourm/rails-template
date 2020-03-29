@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import api from 'api'
+import api from "api"
 
 export default {
   data: function () {
@@ -19,15 +19,14 @@ export default {
       users: [],
     }
   },
-  mounted: async function() {
+  mounted: async function () {
     try {
-      const res = await api.get('/admin/users')
+      const res = await api.get("/admin/users")
       this.users = res.data.users
-    }
-    catch(error) {
+    } catch (error) {
       // エラー処理
-    }
-    finally {
+    } finally {
+      // 最終処理
     }
   },
 }
