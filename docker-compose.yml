@@ -21,10 +21,7 @@ services:
       - ./:/app
       - bundle:/usr/local/bundle
       - node_modules/:/app/node_modules
-      - /app/vendor
-      - /app/tmp
-      - /app/log
-      - /app/.git
+      - app_tmp:/app/tmp
     working_dir: /app
     depends_on:
      - db
@@ -33,3 +30,4 @@ volumes:
   db_data:
   bundle:
   node_modules:
+  app_tmp:
