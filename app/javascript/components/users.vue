@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
-    <div>
+    <div class="users">
       <div v-for="user in users" :key="user.id">
         {{ user.email }}
       </div>
@@ -45,5 +45,10 @@ p {
   font-size: 2em;
   text-align: center;
   color: $primary;
+}
+
+.users {
+  display: flex;
+  user-select: none;
 }
 </style>
