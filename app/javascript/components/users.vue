@@ -12,6 +12,10 @@
     <b-button class="is-primary">
       button
     </b-button>
+    <span class="icon has-text-info">
+      <i class="far fa-address-book" />
+      <i class="fas fa-info-circle" />
+    </span>
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 import "../stylesheets/application"
+import "@fortawesome/fontawesome-free/js/all"
 
 import Vue from "vue/dist/vue.esm"
 import Buefy from "buefy"
