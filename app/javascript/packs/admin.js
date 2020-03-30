@@ -6,14 +6,15 @@ import Buefy from "buefy"
 Vue.use(Buefy)
 
 import store from "store"
+import router from "router"
 
-import App from "components/users"
+import App from "layouts/app"
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     store,
+    router,
     el: "#app",
-    components: { App },
-    template: "<app></app>",
+    render: (h) => h(App),
   })
 })
