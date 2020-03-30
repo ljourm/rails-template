@@ -5,13 +5,14 @@
       span(v-for="user in users" :key="user.id") {{ user.email }}
     b-field(label="Name")
       b-input(value="Kevin Garvey")
-    b-button.is-primary button
+    b-button.is-primary(:loading="loading") button
     span.icon.has-text-info
       i.far.fa-address-book
       i.fas.fa-info-circle
 </template>
 
 <script>
+import { mapState } from "vuex"
 import api from "api"
 
 export default {
@@ -20,6 +21,9 @@ export default {
       message: "Hello Vue!",
       users: [],
     }
+  },
+  computed: {
+    ...mapState("base", ["loading"]),
   },
   mounted: async function () {
     try {
