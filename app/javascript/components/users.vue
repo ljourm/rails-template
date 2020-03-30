@@ -27,7 +27,7 @@ export default {
   },
   mounted: async function () {
     try {
-      const res = await api.get("/admin/users")
+      const res = await api.get("/api/v1/users")
       this.users = res.data.users
     } catch (error) {
       // エラー処理
