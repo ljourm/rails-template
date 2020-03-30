@@ -1,22 +1,14 @@
-<template>
-  <div id="app">
-    <p>{{ message }}</p>
-    <div class="users">
-      <div v-for="user in users" :key="user.id">
-        {{ user.email }}
-      </div>
-    </div>
-    <b-field label="Name">
-      <b-input value="Kevin Garvey" />
-    </b-field>
-    <b-button class="is-primary">
-      button
-    </b-button>
-    <span class="icon has-text-info">
-      <i class="far fa-address-book" />
-      <i class="fas fa-info-circle" />
-    </span>
-  </div>
+<template lang="pug">
+  #app
+    p {{ message }}
+    .users
+      span(v-for="user in users" :key="user.id") {{ user.email }}
+    b-field(label="Name")
+      b-input(value="Kevin Garvey")
+    b-button.is-primary button
+    span.icon.has-text-info
+      i.far.fa-address-book
+      i.fas.fa-info-circle
 </template>
 
 <script>
