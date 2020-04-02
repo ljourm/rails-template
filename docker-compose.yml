@@ -12,6 +12,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/rails/Dockerfile
+    image: rails_template_app
     ports:
       - "3000:3000"
       - "3035:3035"
