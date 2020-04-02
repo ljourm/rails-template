@@ -36,9 +36,10 @@
   },
   "scripts": {
     "eslint": "eslint --ext .vue --ext .js app/javascript",
-    "eslintfix": "eslint --fix --ext .vue --ext .js app/javascript",
+    "fixeslint": "eslint --fix --ext .vue --ext .js app/javascript",
     "stylelint": "stylelint **/*.vue **/*.css **/*.scss",
-    "stylelintfix": "stylelint --fix **/*.vue **/*.css **/*.scss",
-    "lintfix": "yarn eslintfix && yarn stylelintfix"
+    "fixstylelint": "stylelint --fix **/*.vue **/*.css **/*.scss",
+    "alllint": "yarn eslint && yarn stylelint",
+    "fixlint": "yarn fixeslint && yarn fixstylelint"
   }
 }
