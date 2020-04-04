@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register User do # rubocop:disable Metrics/BlockLength
   permit_params :email, :password, :password_confirmation
 
   controller do
