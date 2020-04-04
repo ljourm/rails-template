@@ -1,28 +1,48 @@
 <template lang="pug">
-  #app
+section.section
+  .container.columns
     header
-      h2 vue-router test
-      button.button(@click="logout") logout
-    #links
-      router-link(to="/foo/1") Go to Foo
-      router-link(to="/bar") Go to Bar
-    #page
-      router-view
-      .foo-id foo-id: {{ fooId }}
-    h2 sample
-    #sample
-      users
+      h1.title Vue Sample Page
+  .container
+    .columns
+      .column
+        h2 menu
+        ul
+          li
+            a(@click="logout") logout
+          li
+            router-link(to="/") Go to /
+          li
+            router-link(to="/foo/1") Go to /foo/1
+          li
+            router-link(to="/bar") Go to /bar
+    .columns
+      .column.box
+        .path path: {{ path }}
+        .foo-id foo-id: {{ fooId }}
+        router-view
+    .columns
+      .column
+        UserList
+    .columns
+      .column
+        BuefySample
 </template>
 
 <script>
 import { mapActions } from "vuex"
-import users from "components/users"
+import UserList from "components/molecules/UserList"
+import BuefySample from "components/molecules/BuefySample"
 
 export default {
   components: {
-    users,
+    UserList,
+    BuefySample,
   },
   computed: {
+    path: function () {
+      return this.$route.path
+    },
     fooId: function () {
       return this.$route.params.id
     },

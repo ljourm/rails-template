@@ -1,21 +1,20 @@
 <template lang="pug">
-  #app
-    p {{ message }}
-    .users
-      span(v-for="user in users" :key="user.id") {{ user.email }}
-    b-field(label="Name")
-      b-input(value="Kevin Garvey")
-    b-button.is-primary(:loading="loading") button
-    span.icon.has-text-info
-      i.far.fa-address-book
-      i.fas.fa-info-circle
+.user-list
+  h2 user-list
+  span(v-for="user in users" :key="user.id")
+    EmailLink(:email="user.email")
 </template>
 
 <script>
 import { mapState } from "vuex"
 import api from "api"
 
+import EmailLink from "components/atoms/EmailLink.vue"
+
 export default {
+  components: {
+    EmailLink,
+  },
   data: function () {
     return {
       message: "Hello Vue!",
