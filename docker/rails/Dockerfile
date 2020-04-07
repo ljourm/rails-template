@@ -1,5 +1,5 @@
 FROM node:12.16.1 as node
-FROM ruby:2.6.4
+FROM ruby:2.6.6
 
 ENV LANG C.UTF-8
 ENV YARN_VERSION 1.22.0
