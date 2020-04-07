@@ -8,5 +8,7 @@
 
 return unless Rails.env.development?
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-User.create!(email: 'dev@example.com', password: 'password', password_confirmation: 'password')
+ActiveRecord::Base.transaction do
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  User.create!(email: 'dev@example.com', password: 'password', password_confirmation: 'password')
+end
