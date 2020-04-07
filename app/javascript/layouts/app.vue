@@ -1,8 +1,9 @@
 <template lang="pug">
 section.section
-  .container.columns
-    header
-      h1.title Vue Sample Page
+  .container
+    .columns.column
+      header
+        h1.title Vue Sample Page
   .container
     .columns
       .column
@@ -17,10 +18,12 @@ section.section
           li
             router-link(to="/bar") Go to /bar
     .columns
-      .column.box
-        .path path: {{ path }}
-        .foo-id foo-id: {{ fooId }}
-        router-view
+      .column
+        .box
+          .path path: {{ path }}
+          .foo-id foo-id: {{ fooId }}
+          router-view
+  .container
     .columns
       .column
         UserList
