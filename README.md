@@ -2,7 +2,7 @@
 
 ## 構成
 
-- Ruby 2.6.4
+- Ruby 2.6.6
 - Rails 6.0.1
 - PostgreSQL 12.2
 - Webpack 4.41.2
