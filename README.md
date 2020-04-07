@@ -2,7 +2,7 @@
 
 ## 構成
 
-- Ruby 2.6.4
+- Ruby 2.6.6
 - Rails 6.0.1
 - PostgreSQL 12.2
 - Webpack 4.41.2
@@ -51,9 +51,9 @@ bundle exec rails s
 docker-compose up -d
 docker-compose exec app bundle exec rails db:setup
 
-# 以下は開発時に必要に応じて実行
-docker-compose exec app bundle
-docker-compose exec app yarn
+# 以下は開発時にbundleやyarnでエラーになった際に実行
+docker-compose run app bundle
+docker-compose run app yarn
 ```
 
 ## セットアップ手順 (本番編)

@@ -15,7 +15,7 @@ services:
     image: rails_template_app
     ports:
       - "3000:3000"
-    command: bundle exec rails s -b 0.0.0.0
+    command: bash -c "rm -f ./tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
     env_file: .env
     environment:
       - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server
