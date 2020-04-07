@@ -40,6 +40,9 @@ gem "audited", "~> 4.9"
 gem 'lograge'
 gem 'rack-rewrite', '~> 1.5.0'
 
+# FIX: https://github.com/rack/rack/issues/1619
+gem 'rack', '<2.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
