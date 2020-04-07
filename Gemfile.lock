@@ -406,7 +406,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 2.6.4p104
+   ruby 2.6.6p146
 
 BUNDLED WITH
    2.0.1
