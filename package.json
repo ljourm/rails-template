@@ -29,6 +29,7 @@
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "stylelint": "^13.2.1",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.16.0",
     "webpack-cli": "^3.3.10",

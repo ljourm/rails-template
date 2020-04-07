@@ -41,9 +41,9 @@ export default {
 $primary: #aaa;
 
 p {
+  color: $primary;
   font-size: 2em;
   text-align: center;
-  color: $primary;
 }
 
 .users {
