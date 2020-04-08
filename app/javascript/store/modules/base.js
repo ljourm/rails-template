@@ -1,4 +1,4 @@
-import api from "api"
+import api from "lib/api"
 
 const ERROR_MESSAGE_DEFAULT =
   "エラーが発生しました。管理者にお問い合わせください。"

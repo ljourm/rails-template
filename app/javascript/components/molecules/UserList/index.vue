@@ -7,7 +7,7 @@
 
 <script>
 import { mapState } from "vuex"
-import api from "api"
+import api from "lib/api"
 
 import EmailLink from "components/atoms/EmailLink"
 
