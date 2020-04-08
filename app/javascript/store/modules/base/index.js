@@ -30,20 +30,20 @@ const actions = {
   logout: async ({ dispatch }) => {
     try {
       await api.delete("/api/v1/users/sessions")
-      location.href = "/login"
+      dispatch("redirectToLogin")
     } catch (error) {
       dispatch("setErrorMessage", error)
     }
   },
-  setErrorMessage: ({ commit }, error) => {
+  setErrorMessage: ({ commit, dispatch }, error) => {
     let message = ERROR_MESSAGE_DEFAULT
     if (error) {
       if (error.response) {
         if (error.response.status === 401) {
-          location.href = "/login"
+          dispatch("redirectToLogin")
           return
         } else if (error.response.message) {
-          message = error.message
+          message = error.response.message
         }
       } else if (error.request) {
         message = ERROR_MESSAGE_CONNECTION_FAILED
@@ -51,6 +51,9 @@ const actions = {
     }
 
     commit(SET_ERROR_MESSAGE, message)
+  },
+  redirectToLogin() {
+    location.href = "/login"
   },
 }
 

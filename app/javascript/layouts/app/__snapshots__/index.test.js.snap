@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<section
+  class="section"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="columns column"
+    >
+      <header>
+        <h1
+          class="title"
+        >
+          Vue Sample Page
+        </h1>
+      </header>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <div
+      class="columns"
+    >
+      <div
+        class="column"
+      >
+        <h2>
+          menu
+        </h2>
+        <ul>
+          <li>
+            <a>
+              logout
+            </a>
+          </li>
+          <li>
+            <router-link-stub
+              event="click"
+              tag="a"
+              to="/"
+            >
+              Go to /
+            </router-link-stub>
+          </li>
+          <li>
+            <router-link-stub
+              event="click"
+              tag="a"
+              to="/foo/1"
+            >
+              Go to /foo/1
+            </router-link-stub>
+          </li>
+          <li>
+            <router-link-stub
+              event="click"
+              tag="a"
+              to="/bar"
+            >
+              Go to /bar
+            </router-link-stub>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="columns"
+    >
+      <div
+        class="column"
+      >
+        <div
+          class="box"
+        >
+          <div
+            class="path"
+          >
+            path: /
+          </div>
+          <div
+            class="foo-id"
+          >
+            foo-id: 
+          </div>
+          <router-view-stub
+            name="default"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <div
+      class="columns"
+    >
+      <div
+        class="column"
+      >
+        <userlist-stub />
+      </div>
+    </div>
+    <div
+      class="columns"
+    >
+      <div
+        class="column"
+      >
+        <buefysample-stub />
+      </div>
+    </div>
+  </div>
+</section>
+`;
