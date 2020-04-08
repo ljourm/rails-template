@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<a
+  href="mailto:test@example.com"
+>
+  test@example.com
+</a>
+`;

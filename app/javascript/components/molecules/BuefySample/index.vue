@@ -19,7 +19,7 @@ export default {
     }
   },
   computed: {
-    ...mapState("base", ["loading"]),
+    ...mapState(["loading"]),
   },
 }
 </script>

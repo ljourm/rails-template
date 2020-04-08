@@ -9,7 +9,7 @@
 import { mapState } from "vuex"
 import api from "api"
 
-import EmailLink from "components/atoms/EmailLink.vue"
+import EmailLink from "components/atoms/EmailLink"
 
 export default {
   components: {
