@@ -14,6 +14,7 @@ module.exports = {
     "no-descending-specificity": null,
   },
   "ignoreFiles": [
+    "coverage/**",
     "public/**",
     "vendor/**",
   ],

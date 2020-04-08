@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    "jest/globals": true,
   },
   parserOptions: {
     parser: 'babel-eslint'
@@ -15,6 +16,7 @@ module.exports = {
   plugins: [
     'prettier',
     'vue',
+    "jest",
   ],
   rules: {
     "semi": [2, "never"],
