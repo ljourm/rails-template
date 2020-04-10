@@ -65,8 +65,9 @@ docker-compose run app yarn
 
 apt -y install libpq-dev
 
-/usr/local/rbenv/shims/bundle exec rails db:migrate RAILS_ENV=production
-/usr/local/rbenv/shims/bundle exec rails s -e production -p 3000 -d
+RAILS_ENV=production /usr/local/rbenv/shims/bundle exec rails assets:precompile
+RAILS_ENV=production RAILS_TEMPLATE_DATABASE_PASSWORD=password /usr/local/rbenv/shims/bundle exec rails db:migrate
+RAILS_TEMPLATE_DATABASE_PASSWORD=password RAILS_SERVE_STATIC_FILES=true /usr/local/rbenv/shims/bundle exec rails s -e production -d
 ```
 
 ## ログイン情報
