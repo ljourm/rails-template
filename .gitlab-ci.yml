@@ -1,0 +1,64 @@
+image: rails_template_app:latest
+services:
+  - postgres:12.2-alpine
+
+variables:
+  RAILS_ENV: test
+  DB_HOST: postgres
+  DB_USER: pguser
+  DB_PASSWORD: password
+  POSTGRES_USER: pguser
+  POSTGRES_PASSWORD: password
+
+cache:
+  paths:
+    - vendor/bundle
+    - node_modules
+
+stages:
+  - linter
+  - test
+  - stg
+  - prod
+
+before_script:
+  - bundle install --path vendor/bundle
+  - yarn install
+  - bundle exec rails db:setup
+
+rubocop:
+  stage: linter
+  script:
+    - bundle exec rubocop
+yarn-lint:
+  stage: linter
+  script:
+    - yarn alllint
+  only:
+    - vue
+
+rspec:
+  stage: test
+  script:
+    - bundle exec rspec
+yarn-test:
+  stage: test
+  script:
+    - yarn test
+  only:
+    - vue
+
+deploy-stg:
+  stage: stg
+  script:
+    - echo todo
+  only:
+    - master
+
+deploy-prod:
+  stage: prod
+  when: manual
+  script:
+    - echo todo
+  only:
+    - master
