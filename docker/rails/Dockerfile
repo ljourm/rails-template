@@ -7,6 +7,7 @@ ENV BUNDLER_VERSION 2.0.1
 ENV APP_ROOT /app
 
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE 1
+ENV DEBIAN_FRONTEND noninteractive
 
 COPY --from=node /usr/local/bin/node /usr/local/bin/
 COPY --from=node /opt/yarn-v${YARN_VERSION} /opt/yarn
