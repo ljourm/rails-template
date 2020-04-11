@@ -20,7 +20,6 @@ COPY ./Gemfile.lock $APP_ROOT
 COPY ./package.json $APP_ROOT
 COPY ./yarn.lock $APP_ROOT
 
-RUN bundle install
-RUN yarn install
-
+# RUN bundle install
+# RUN yarn install
 # COPY ./ $APP_ROOT
