@@ -24,7 +24,6 @@ stages:
 before_script:
   - bundle install --path vendor/bundle
   - yarn install
-  - bundle exec rails db:setup
 
 rubocop:
   stage: linter
@@ -40,6 +39,7 @@ yarn-lint:
 rspec:
   stage: test
   script:
+    - bundle exec rails db:setup
     - bundle exec rspec
 yarn-test:
   stage: test
@@ -47,6 +47,10 @@ yarn-test:
     - yarn test
   only:
     - vue
+  artifacts:
+    name: "js-coverage-$CI_COMMIT_REF_NAME"
+    paths:
+      - coverage/
 
 deploy-stg:
   stage: stg
