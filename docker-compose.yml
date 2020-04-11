@@ -19,6 +19,7 @@ services:
     env_file: .env
     environment:
       - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server
+      - DEV_DOCKER=true
     volumes:
       - ./:/app
       - bundle:/usr/local/bundle

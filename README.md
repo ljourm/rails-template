@@ -48,12 +48,10 @@ bundle exec rails s
 ## セットアップ手順 (Docker編)
 
 ```
+docker-compose run --rm app bundle
+docker-compose run --rm app yarn
 docker-compose up -d
 docker-compose exec app bundle exec rails db:setup
-
-# 以下は開発時にbundleやyarnでエラーになった際に実行
-docker-compose run app bundle
-docker-compose run app yarn
 ```
 
 ## セットアップ手順 (本番編)
