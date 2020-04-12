@@ -102,3 +102,31 @@ yarn alllint
 # eslint, stylelintの実行・適用
 yarn fixlint
 ```
+
+## 本番環境のDB接続設定
+
+### credential.ymlの修正
+
+```
+EDITOR=vim bundle exec rails credentials:edit
+
+# 初期設定
+secret_key_base: # 省略
+
+production:
+  db_host: xxx
+  db_name: xxx
+  db_user: xxx
+  db_pass: xxx
+
+staging:
+  db_host: xxx
+  db_name: xxx
+  db_user: xxx
+  db_pass: xxx
+```
+
+### config/master.key
+
+デフォルトでは `config/master.key` をgit管理外にするようにしているが、このプロジェクトでは無効化している。
+本番運用の際にはセキュリティー上の観点から `.gitignore` を書き換えておくこと。
