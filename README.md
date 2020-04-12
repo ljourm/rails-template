@@ -114,16 +114,15 @@ EDITOR=vim bundle exec rails credentials:edit
 secret_key_base: # 省略
 
 production:
-  db_host: xxx
-  db_name: xxx
-  db_user: xxx
-  db_pass: xxx
-
+  db_host: db
+  db_name: rails_template_development
+  db_user: rails_template
+  db_pass: password
 staging:
-  db_host: xxx
-  db_name: xxx
-  db_user: xxx
-  db_pass: xxx
+  db_host: db
+  db_name: rails_template_development
+  db_user: rails_template
+  db_pass: password
 ```
 
 ### config/master.key
