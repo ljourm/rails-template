@@ -31,9 +31,23 @@ services:
       - db
     tty: true
     stdin_open: true
+  # cap:
+    # build:
+    #   context: .
+    #   dockerfile: ./docker/cap/Dockerfile
+    # image: cap
+    # ports:
+    #   - "10022:22"
+    # depends_on:
+    #   - db
+    # tty: true
+    # stdin_open: true
+    # volumes:
+    #   - cap_shared:/var/www/rails_template/shared
 volumes:
   db_data:
   bundle:
   node_modules:
   app_log:
   app_tmp_cache:
+  # cap_shared:
