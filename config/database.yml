@@ -83,12 +83,14 @@ test:
 #
 production:
   <<: *default
-  database: rails_template_production
-  username: rails_template
-  password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+  host: <%= Rails.application.credentials.production[:db_host] %>
+  database: <%= Rails.application.credentials.production[:db_name] %>
+  username: <%= Rails.application.credentials.production[:db_user] %>
+  password: <%= Rails.application.credentials.production[:db_pass] %>
 
 staging:
   <<: *default
-  database: rails_template_staging
-  username: rails_template
-  password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+  host: <%= Rails.application.credentials.staging[:db_host] %>
+  database: <%= Rails.application.credentials.staging[:db_name] %>
+  username: <%= Rails.application.credentials.staging[:db_user] %>
+  password: <%= Rails.application.credentials.staging[:db_pass] %>
