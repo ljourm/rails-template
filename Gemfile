@@ -64,6 +64,9 @@ group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-performance'
+  gem "capistrano", "~> 3.13", require: false
+  gem "capistrano-rails", "~> 1.4", require: false
+  gem 'capistrano-bundler', '~> 1.6', require: false
 end
 
 group :test do
