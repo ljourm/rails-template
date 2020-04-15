@@ -1,9 +1,13 @@
 <template lang="pug">
 .user-list
   h2 user-list
-  span(v-for="user in users" :key="user.id")
-    EmailLink(:email="user.email")
-    span {{ user.name }}
+  table.table.is-striped.is-fullwidth
+    tr(v-for="user in users" :key="user.id")
+      td
+        EmailLink(:email="user.email")
+      td {{ user.user_info.name }}
+      td
+        div(v-for="user_role in user.user_roles") {{ user_role.role }}
 </template>
 
 <script>
