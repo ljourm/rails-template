@@ -10,5 +10,6 @@ return unless Rails.env.development?
 
 ActiveRecord::Base.transaction do
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-  User.create!(email: 'dev@example.com', password: 'password', password_confirmation: 'password')
+
+  FactoryBot.create(:user, :with_info, :with_all_roles, email: 'dev@example.com')
 end
