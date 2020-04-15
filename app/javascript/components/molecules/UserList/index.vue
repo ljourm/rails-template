@@ -3,6 +3,7 @@
   h2 user-list
   span(v-for="user in users" :key="user.id")
     EmailLink(:email="user.email")
+    span {{ user.name }}
 </template>
 
 <script>
