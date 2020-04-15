@@ -5,7 +5,13 @@ import axios from "axios"
 jest.mock("axios")
 
 const email = "test@example.com"
-const res = { data: { users: [{ id: 1, email: email }] } }
+const res = {
+  data: {
+    users: [
+      { id: 1, email: email, user_info: { name: "name" }, user_roles: [] },
+    ],
+  },
+}
 axios.get.mockResolvedValue(res)
 
 describe("Component", () => {

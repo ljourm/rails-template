@@ -7,10 +7,20 @@ exports[`Component snapshot 1`] = `
   <h2>
     user-list
   </h2>
-  <span>
-    <emaillink-stub
-      email="test@example.com"
-    />
-  </span>
+  <table
+    class="table is-striped is-fullwidth"
+  >
+    <tr>
+      <td>
+        <emaillink-stub
+          email="test@example.com"
+        />
+      </td>
+      <td>
+        name
+      </td>
+      <td />
+    </tr>
+  </table>
 </div>
 `;
