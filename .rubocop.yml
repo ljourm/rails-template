@@ -47,3 +47,7 @@ Style/TrailingCommaInArguments:
 
 RSpec/ContextWording:
   Enabled: false
+RSpec/ImplicitSubject:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false

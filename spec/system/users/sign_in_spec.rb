@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'users/sign_in', type: :system do
   context 'ログイン済み' do
-    let(:login_user) { create(:user) }
+    let(:login_user) { create(:user, :with_info) }
 
     before { sign_in login_user }
 
