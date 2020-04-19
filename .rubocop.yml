@@ -16,6 +16,7 @@ AllCops:
     - config/**/*
     - Gemfile
     - node_modules/**/*
+  NewCops: enable
 
 # Missing magic comment # frozen_string_literal: true. を無視
 Style/FrozenStringLiteralComment:
