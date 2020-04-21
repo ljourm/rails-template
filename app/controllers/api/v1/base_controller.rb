@@ -11,12 +11,14 @@ class Api::V1::BaseController < AuthenticatedController
   end
 
   def _render_500(exception = nil)
+    @rescued_exception = exception
     logger.error exception.message
     exception.backtrace.each { |line| logger.error line }
     render json: { error: '500 internal server errror' }, status: :internal_server_error
   end
 
   def _render_422(exception = nil)
+    @rescued_exception = exception
     logger.info exception.message
     logger.info exception.record.inspect
     exception.backtrace.each { |line| logger.info line }
@@ -24,6 +26,7 @@ class Api::V1::BaseController < AuthenticatedController
   end
 
   def _render_404(exception = nil)
+    @rescued_exception = exception
     logger.info exception.message
     exception.backtrace.each { |line| logger.info line }
     render json: { error: '404 not found' }, status: :not_found
