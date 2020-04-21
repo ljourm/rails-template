@@ -1,4 +1,4 @@
 Rails.application.config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
   rewrite '/login', '/login'
-  rewrite /\A(?!\/api\/.*)(?!\/acadmin\/.*).*\z/, '/'
+  rewrite /\A(?!\/api\/.*)(?!\/acadmin\/.*)(?!\/assets\/.*).*\z/, '/'
 end
