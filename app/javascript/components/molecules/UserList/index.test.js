@@ -8,7 +8,7 @@ const email = "test@example.com"
 const res = {
   data: {
     users: [
-      { id: 1, email: email, user_info: { name: "name" }, user_roles: [] },
+      { uuid: 'uuid', email: email, name: "name", roles: [] },
     ],
   },
 }

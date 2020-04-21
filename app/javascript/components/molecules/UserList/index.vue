@@ -5,9 +5,9 @@
     tr(v-for="user in users" :key="user.id")
       td
         EmailLink(:email="user.email")
-      td {{ user.user_info.name }}
+      td {{ user.name }}
       td
-        div(v-for="user_role in user.user_roles") {{ user_role.role }}
+        div(v-for="role in user.roles") {{ role }}
 </template>
 
 <script>

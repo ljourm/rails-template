@@ -1,13 +1,7 @@
 json.users do
   json.array! @users do |user|
-    json.extract! user, :email
-    json.user_info do
-      json.name user.user_info.name
-    end
-    json.user_roles do
-      json.array! user.user_roles do |user_role|
-        json.role user_role.role_i18n
-      end
-    end
+    json.extract! user, :uuid, :email
+    json.extract! user.user_info, :name
+    json.roles user.user_roles.map(&:role_i18n)
   end
 end
