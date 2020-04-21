@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      user_info: ユーザー
     attributes:
-      user:
+      user_info:
         name: 氏名
