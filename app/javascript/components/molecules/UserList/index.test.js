@@ -7,9 +7,7 @@ jest.mock("axios")
 const email = "test@example.com"
 const res = {
   data: {
-    users: [
-      { uuid: 'uuid', email: email, name: "name", roles: [] },
-    ],
+    users: [{ uuid: "uuid", email: email, name: "name", roles: [] }],
   },
 }
 axios.get.mockResolvedValue(res)
