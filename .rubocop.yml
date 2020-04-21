@@ -18,6 +18,14 @@ AllCops:
     - node_modules/**/*
   NewCops: enable
 
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+Style/WordArray:
+  Exclude:
+    - spec/**/*
+
 # Missing magic comment # frozen_string_literal: true. を無視
 Style/FrozenStringLiteralComment:
   Enabled: false
