@@ -17,12 +17,13 @@ Rails.application.configure do
       log_level: 'INFO',
       event_time: Time.now.iso8601,
       hostname: `hostname`.strip,
-      params: event.payload[:params].except(*exceptions)
+      user_id: event.payload[:user_id],
+      params: event.payload[:params].except(*exceptions),
     }
     if event.payload[:exception]
       data[:log_level] = 'FATAL'
       data[:exception] = event.payload[:exception]
-      data[:exception_backtrace] = event.payload[:exception_object].backtrace[0..6]
+      data[:exception_backtrace] = event.payload[:exception_object].backtrace[0..9]
     end
     data
   end
