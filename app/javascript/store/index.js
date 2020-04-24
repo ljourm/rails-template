@@ -5,6 +5,7 @@ Vue.use(Vuex)
 import base from "./modules/base"
 import api from "./modules/api"
 import user from "./modules/user"
+import users from "./modules/users"
 
 export default new Vuex.Store({
   strict: process.env.NODE_ENV === "development",
@@ -12,5 +13,6 @@ export default new Vuex.Store({
     base: base,
     api: api,
     user: user,
+    users: users,
   },
 })

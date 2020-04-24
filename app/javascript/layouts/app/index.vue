@@ -14,7 +14,7 @@ section.section
           li
             router-link(to="/") Go to /
           li
-            router-link(to="/users/1") Go to /users/1
+            router-link(to="/users") Go to /users
           li
             router-link(to="/foo/1") Go to /foo/1
           li
@@ -31,20 +31,15 @@ section.section
   .container
     .columns
       .column
-        UserList
-    .columns
-      .column
         BuefySample
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex"
-import UserList from "components/molecules/UserList"
 import BuefySample from "components/molecules/BuefySample"
 
 export default {
   components: {
-    UserList,
     BuefySample,
   },
   computed: {
