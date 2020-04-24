@@ -14,14 +14,19 @@ section.section
           li
             router-link(to="/") Go to /
           li
+            router-link(to="/users/1") Go to /users/1
+          li
             router-link(to="/foo/1") Go to /foo/1
           li
             router-link(to="/bar") Go to /bar
     .columns
       .column
         .box
+          .loading loading: {{ loading }}
           .path path: {{ path }}
-          .foo-id foo-id: {{ fooId }}
+          .id id: {{ id }}
+          .error-message error-message {{ errorMessage }}
+          hr
           router-view
   .container
     .columns
@@ -33,7 +38,7 @@ section.section
 </template>
 
 <script>
-import { mapActions } from "vuex"
+import { mapState, mapActions } from "vuex"
 import UserList from "components/molecules/UserList"
 import BuefySample from "components/molecules/BuefySample"
 
@@ -43,10 +48,11 @@ export default {
     BuefySample,
   },
   computed: {
+    ...mapState("base", ["loading", "errorMessage"]),
     path: function () {
       return this.$route.path
     },
-    fooId: function () {
+    id: function () {
       return this.$route.params.id
     },
   },
