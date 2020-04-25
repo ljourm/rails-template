@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store snapshot 1`] = `
+Object {
+  "actions": Object {
+    "clear": [Function],
+    "destroy": [Function],
+    "fetch": [Function],
+    "submit": [Function],
+  },
+  "mutations": Object {
+    "SET_USER": [Function],
+  },
+  "namespaced": true,
+  "state": Object {
+    "user": Object {},
+  },
+}
+`;

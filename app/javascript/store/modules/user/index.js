@@ -3,7 +3,7 @@ const SET_USER = "SET_USER"
 const URL = "/api/v1/users"
 
 const state = {
-  user: null,
+  user: {},
 }
 
 const mutations = {
@@ -19,7 +19,7 @@ const actions = {
       { url: URL, id: id },
       { root: true }
     )
-    const user = data ? data.user : null
+    const user = data ? data.user : {}
     commit(SET_USER, user)
 
     return data
@@ -48,7 +48,7 @@ const actions = {
     )
 
     if (result) {
-      commit(SET_USER, null)
+      commit(SET_USER, {})
       return result
     }
   },
