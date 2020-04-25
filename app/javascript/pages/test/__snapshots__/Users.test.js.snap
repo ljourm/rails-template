@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<div
+  class="user-list"
+  users="[object Object]"
+>
+  <h2>
+    user-list
+  </h2>
+  <table
+    class="table is-striped is-fullwidth"
+  >
+    <tr>
+      <td>
+        <a
+          class=""
+          href="#/users/uuid"
+        >
+          name
+        </a>
+      </td>
+      <td>
+        <a
+          href="mailto:test@example.com"
+        >
+          test@example.com
+        </a>
+      </td>
+      <td />
+    </tr>
+  </table>
+</div>
+`;
