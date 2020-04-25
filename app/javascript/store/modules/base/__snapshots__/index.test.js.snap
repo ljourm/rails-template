@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store snapshot 1`] = `
+Object {
+  "actions": Object {
+    "logout": [Function],
+    "redirectToLogin": [Function],
+    "setErrorMessage": [Function],
+  },
+  "mutations": Object {
+    "CLEAR_ERROR_MESSAGE": [Function],
+    "SET_ERROR_MESSAGE": [Function],
+    "SET_LOADING": [Function],
+  },
+  "namespaced": true,
+  "state": Object {
+    "errorMessage": null,
+    "loading": false,
+  },
+}
+`;
