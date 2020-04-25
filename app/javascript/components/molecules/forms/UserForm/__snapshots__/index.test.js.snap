@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component test 1`] = `
+<form>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      氏名
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        class="input"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      EMail
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        class="input"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      パスワード
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        class="input"
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      パスワード確認
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        class="input"
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    class="field is-grouped"
+  >
+    <div
+      class="control"
+    >
+      <button
+        class="button destroy"
+      >
+        削除
+      </button>
+    </div>
+    <div
+      class="control"
+    >
+      <button
+        class="button is-primary submit"
+        type="submit"
+      >
+        送信
+      </button>
+    </div>
+  </div>
+</form>
+`;

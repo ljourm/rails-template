@@ -1,19 +1,33 @@
-import { shallowMount } from "@vue/test-utils"
+import { createLocalVue, shallowMount } from "@vue/test-utils"
+import VueRouter from "vue-router"
+import Vuex from "vuex"
 import Component from "./"
 
-import axios from "axios"
-jest.mock("axios")
-
 const email = "test@example.com"
-const res = {
-  data: {
-    users: [{ uuid: "uuid", email: email, name: "name", roles: [] }],
-  },
-}
-axios.get.mockResolvedValue(res)
+const users = [{ uuid: "uuid", email: email, name: "name", roles: [] }]
 
 describe("Component", () => {
-  const wrapper = shallowMount(Component)
+  const localVue = createLocalVue()
+  localVue.use(VueRouter)
+  localVue.use(Vuex)
+
+  const router = new VueRouter()
+
+  const state = { users: users }
+  const store = new Vuex.Store({
+    modules: {
+      users: {
+        namespaced: true,
+        state,
+      },
+    },
+  })
+
+  const wrapper = shallowMount(Component, {
+    localVue,
+    router,
+    store,
+  })
 
   test("snapshot", () => {
     expect(wrapper.element).toMatchSnapshot()
