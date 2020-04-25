@@ -14,6 +14,7 @@ const mutations = {
 
 const actions = {
   fetch: async ({ commit, dispatch }, { id }) => {
+    commit(SET_USER, {})
     const data = await dispatch(
       "api/fetch",
       { url: URL, id: id },
