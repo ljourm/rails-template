@@ -3,7 +3,7 @@ const SET_USERS = "SET_USERS"
 const URL = "/api/v1/users"
 
 const state = {
-  users: null,
+  users: [],
 }
 
 const mutations = {
@@ -15,7 +15,7 @@ const mutations = {
 const actions = {
   fetch: async ({ commit, dispatch }) => {
     const data = await dispatch("api/fetch", { url: URL }, { root: true })
-    const users = data ? data.users : null
+    const users = data ? data.users : []
     commit(SET_USERS, users)
 
     return data
