@@ -1,5 +1,5 @@
 <template lang="pug">
-  form(v-if="form" @submit.prevent="submit")
+  form(@submit.prevent="submit")
     .field
       label.label 氏名
       .control
@@ -18,9 +18,9 @@
         input.input(v-model="form.password_confirmation", type="password")
     .field.is-grouped
       .control
-        button.button(@click.prevent="destroy") 削除
+        button.button.destroy(@click.prevent="destroy") 削除
       .control
-        button.button.is-primary(type="submit") 送信
+        button.button.is-primary.submit(type="submit") 送信
 </template>
 
 <script>
@@ -28,16 +28,20 @@ export default {
   props: {
     user: {
       type: Object,
+      required: true,
     },
   },
   data() {
     return {
-      form: null,
+      form: {},
     }
   },
   watch: {
-    user: function (value) {
-      this.form = JSON.parse(JSON.stringify(value))
+    user: {
+      immediate: true,
+      handler(value) {
+        this.form = JSON.parse(JSON.stringify(value))
+      },
     },
   },
   methods: {
