@@ -13,18 +13,22 @@ export default {
   },
   beforeRouteEnter: function (to, _from, next) {
     next((vm) => {
-      vm.fetch({ id: to.params.id })
+      vm.fetchForm(to.params.id)
     })
   },
   beforeRouteUpdate(to, _from, next) {
-    this.fetch({ id: to.params.id })
+    this.fetchForm(to.params.id)
     next()
   },
   computed: {
     ...mapState("user", ["user"]),
   },
   methods: {
-    ...mapActions("user", ["fetch", "submit", "destroy"]),
+    ...mapActions("user", ["fetch", "submit", "destroy", "clear"]),
+    fetchForm: function (id) {
+      if (id === "new") this.clear()
+      else this.fetch({ id: id })
+    },
     submitForm: function (form) {
       this.submit({ form: form })
     },
