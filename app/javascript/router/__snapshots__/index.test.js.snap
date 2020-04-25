@@ -67,7 +67,6 @@ VueRouter {
             "user": [Function],
           },
           "methods": Object {
-            "clear": [Function],
             "destroy": [Function],
             "destroyData": [Function],
             "fetch": [Function],

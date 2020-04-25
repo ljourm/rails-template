@@ -24,7 +24,7 @@ export default {
     ...mapState("user", ["user"]),
   },
   methods: {
-    ...mapActions("user", ["fetch", "submit", "destroy", "clear"]),
+    ...mapActions("user", ["fetch", "submit", "destroy"]),
     submitForm: function (form) {
       this.submit({ form: form })
     },
