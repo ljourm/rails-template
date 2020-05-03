@@ -1,8 +1,9 @@
 class Api::V1::BaseController < AuthenticatedController
-  rescue_from StandardError,                  with: :_render_500
-  rescue_from ActiveRecord::RecordInvalid,    with: :_render_422
-  rescue_from ActiveRecord::RecordNotFound,   with: :_render_404
-  rescue_from ActionController::RoutingError, with: :_render_404
+  rescue_from StandardError,                      with: :_render_500
+  rescue_from ActiveRecord::RecordInvalid,        with: :_render_422
+  rescue_from ActiveRecord::RecordNotFound,       with: :_render_404
+  rescue_from ActionController::RoutingError,     with: :_render_404
+  rescue_from ActionController::ParameterMissing, with: :_render_400
 
   private
 
@@ -30,5 +31,12 @@ class Api::V1::BaseController < AuthenticatedController
     logger.info exception.message
     exception.backtrace.each { |line| logger.info line }
     render json: { error: '404 not found' }, status: :not_found
+  end
+
+  def _render_400(exception = nil)
+    @rescued_exception = exception
+    logger.info exception.message
+    exception.backtrace.each { |line| logger.info line }
+    render json: { error: '400 bad request' }, status: :bad_request
   end
 end
