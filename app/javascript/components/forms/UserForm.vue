@@ -18,9 +18,9 @@
         input.input(v-model="form.password_confirmation", type="password")
     .field.is-grouped
       .control
-        button.button.destroy(@click.prevent="destroy") 削除
-      .control
         button.button.is-primary.submit(type="submit") 送信
+      .control
+        button.button.destroy(@click.prevent="destroy") 削除
 </template>
 
 <script>
