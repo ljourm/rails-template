@@ -77,19 +77,19 @@ exports[`Component test 1`] = `
       class="control"
     >
       <button
-        class="button destroy"
+        class="button is-primary submit"
+        type="submit"
       >
-        削除
+        送信
       </button>
     </div>
     <div
       class="control"
     >
       <button
-        class="button is-primary submit"
-        type="submit"
+        class="button destroy"
       >
-        送信
+        削除
       </button>
     </div>
   </div>

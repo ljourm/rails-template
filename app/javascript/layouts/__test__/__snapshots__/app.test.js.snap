@@ -59,6 +59,15 @@ exports[`Component snapshot 1`] = `
             <router-link-stub
               event="click"
               tag="a"
+              to="/users/new"
+            >
+              Go to /users/new
+            </router-link-stub>
+          </li>
+          <li>
+            <router-link-stub
+              event="click"
+              tag="a"
               to="/foo/1"
             >
               Go to /foo/1
