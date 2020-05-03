@@ -1,4 +1,4 @@
-import router from "../"
+import router from "."
 
 describe("router", () => {
   test("router", () => {
