@@ -5,7 +5,7 @@
 <script>
 import { mapState, mapActions } from "vuex"
 
-import UserForm from "components/molecules/forms/UserForm"
+import UserForm from "components/forms/UserForm"
 
 export default {
   components: {

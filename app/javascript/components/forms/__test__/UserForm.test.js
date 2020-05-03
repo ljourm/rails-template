@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from "@vue/test-utils"
-import Component from "./"
+import Component from "../UserForm"
 
 const email = "test@example.com"
 const user = { uuid: "uuid", email: email, name: "name" }

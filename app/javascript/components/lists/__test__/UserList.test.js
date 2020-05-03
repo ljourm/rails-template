@@ -1,7 +1,7 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 import VueRouter from "vue-router"
 import Vuex from "vuex"
-import Component from "./"
+import Component from "../UserList"
 
 const email = "test@example.com"
 const users = [{ uuid: "uuid", email: email, name: "name", roles: [] }]

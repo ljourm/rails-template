@@ -5,7 +5,7 @@
 <script>
 import { mapState, mapActions } from "vuex"
 
-import UserList from "components/molecules/lists/UserList"
+import UserList from "components/lists/UserList"
 
 export default {
   components: {

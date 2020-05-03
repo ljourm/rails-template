@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Component from "./"
+import Component from "../EmailLink"
 
 describe("Component", () => {
   const email = "test@example.com"

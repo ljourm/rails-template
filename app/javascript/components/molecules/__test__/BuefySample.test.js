@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 import Buefy from "buefy"
-import Component from "./"
+import Component from "../BuefySample"
 
 describe("Component", () => {
   const localVue = createLocalVue()
