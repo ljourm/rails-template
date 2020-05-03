@@ -16,6 +16,8 @@ section.section
           li
             router-link(to="/users") Go to /users
           li
+            router-link(to="/users/new") Go to /users/new
+          li
             router-link(to="/foo/1") Go to /foo/1
           li
             router-link(to="/bar") Go to /bar
