@@ -22,6 +22,11 @@ masterで導入したGemや設定に加えて以下を導入。
 - Vue Rooter
 - Buefy
 
+### 運用方針
+
+- WebpackやVueに関係ない設定はmasterブランチに
+- vueブランチには最新masterブランチを常にマージ
+
 ## セットアップ手順 (ローカル編)
 
 ### DB設定
