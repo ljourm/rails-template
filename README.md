@@ -1,5 +1,7 @@
 # Rails Template
 
+Railsアプリのスタートアップの際にテンプレートとして使用することを想定したプロジェクト。
+
 ## 構成
 
 - Ruby 2.6.6
@@ -21,6 +23,11 @@ masterで導入したGemや設定に加えて以下を導入。
 - Vuex
 - Vue Rooter
 - Buefy
+
+### 運用方針
+
+- WebpackやVueに関係ない設定はmasterブランチに
+- vueブランチには最新masterブランチを常にマージ
 
 ## セットアップ手順 (ローカル編)
 
