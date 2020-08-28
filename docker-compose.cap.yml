@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  cap:
+    build:
+      context: .
+      dockerfile: ./docker/cap/Dockerfile
+    image: cap
+    ports:
+      - "10022:22"
+      - "13000:3000"
+    tty: true
+    stdin_open: true
+    volumes:
+      - cap_shared:/var/www/rails_template/shared
+volumes:
+  cap_shared:

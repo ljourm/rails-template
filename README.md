@@ -110,6 +110,18 @@ yarn alllint
 yarn fixlint
 ```
 
+## Capistrano
+
+Docker上でstaging環境のデプロイをテストする場合
+
+```
+# DockerComposeの起動
+docker-compose -f docker-compose.yml -f docker-compose.cap.yml up -d
+
+# デプロイ
+docker-compose -f docker-compose.yml -f docker-compose.cap.yml exec app bundle exec cap staging deploy
+```
+
 ## 本番環境のDB接続設定
 
 ### credential.ymlの修正

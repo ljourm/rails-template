@@ -20,14 +20,11 @@ RUN apt-get update \
 
 RUN mkdir /var/run/sshd
 RUN echo "root:${PASSWORD}" | chpasswd
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
+RUN sed "s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g" -i /etc/pam.d/sshd
 
-ENV NOTVISIBLE "in users profile"
-RUN echo "export VISIBLE=now" >> /etc/profile
+RUN gem install bundler -v $BUNDLER_VERSION
+RUN echo "export GEM_HOME=${GEM_HOME}" > /etc/profile.d/gem_settings.sh
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
-
-# SSHで接続した状態で以下のコマンドを実行すること
-# gem install bundler -v $BUNDLER_VERSION
