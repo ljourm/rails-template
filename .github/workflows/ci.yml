@@ -1,0 +1,60 @@
+name: ci
+
+on: [push]
+
+jobs:
+  ci_rails:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.2-alpine
+        env:
+          POSTGRES_USER: pguser
+          POSTGRES_PASSWORD: password
+    container:
+      image: ruby:2.6.6
+      env:
+        RAILS_ENV: test
+        DB_HOST: postgres
+        DB_USER: pguser
+        DB_PASSWORD: password
+        BUNDLER_VERSION: 2.0.1
+    steps:
+    - name: Install bundler
+      run: gem install bundler -v $BUNDLER_VERSION
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.1'
+    - name: Install yarn
+      run: npm install -g yarn
+    - name: Install chrome
+      run: |
+        echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+        apt update -y
+        apt install -y google-chrome-stable
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+    - uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: yarn-${{ hashFiles('**/yarn.lock') }}
+    - name: Install gem dependencies
+      run: bundle install --path vendor/bundle --deployment --without production development
+    - name: Install npm dependencies
+      run: yarn install --production --frozen-lockfile
+    - name: DB setup
+      run: |
+        bundle exec rails db:create RAILS_ENV=test
+        bundle exec rails db:migrate RAILS_ENV=test
+    - name: Run Rubocop
+      run: bundle exec rubocop
+    - name: Run Rspec
+      run: bundle exec rspec
+    - uses: actions/upload-artifact@v2
+      with:
+        name: coverage_rspec
+        path: coverage/rspec
