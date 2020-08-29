@@ -2,7 +2,7 @@
 lock "~> 3.13.0"
 
 set :application, "rails_template"
-set :repo_url, "git@dev.ljou.info:i-nauts/rakuraku-kanri.git"
+set :repo_url, "https://github.com/ljourm/rails-template.git"
 set :branch, "master"
 
 # Default branch is :master
@@ -29,6 +29,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { gem_home: "/usr/local/bundle" }
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
@@ -38,5 +39,3 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-
-set :bundle_path, '/usr/local/bundle/bin/bundle'
