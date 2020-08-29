@@ -61,20 +61,21 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
-  gem 'rubocop-performance'
   gem "capistrano", "~> 3.13", require: false
   gem "capistrano-rails", "~> 1.4", require: false
   gem 'capistrano-bundler', '~> 1.6', require: false
 end
 
 group :test do
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webdrivers'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
