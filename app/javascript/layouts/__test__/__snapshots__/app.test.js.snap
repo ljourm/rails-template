@@ -39,6 +39,7 @@ exports[`Component snapshot 1`] = `
           </li>
           <li>
             <router-link-stub
+              ariacurrentvalue="page"
               event="click"
               tag="a"
               to="/"
@@ -48,6 +49,7 @@ exports[`Component snapshot 1`] = `
           </li>
           <li>
             <router-link-stub
+              ariacurrentvalue="page"
               event="click"
               tag="a"
               to="/users"
@@ -57,6 +59,7 @@ exports[`Component snapshot 1`] = `
           </li>
           <li>
             <router-link-stub
+              ariacurrentvalue="page"
               event="click"
               tag="a"
               to="/users/new"
@@ -66,6 +69,7 @@ exports[`Component snapshot 1`] = `
           </li>
           <li>
             <router-link-stub
+              ariacurrentvalue="page"
               event="click"
               tag="a"
               to="/foo/1"
@@ -75,6 +79,7 @@ exports[`Component snapshot 1`] = `
           </li>
           <li>
             <router-link-stub
+              ariacurrentvalue="page"
               event="click"
               tag="a"
               to="/bar"
