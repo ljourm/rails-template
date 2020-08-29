@@ -11,9 +11,11 @@ AllCops:
     - bin/*
     - db/**/*
     - config/**/*
-    - Gemfile
     - node_modules/**/*
   NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
