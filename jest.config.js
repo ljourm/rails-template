@@ -19,6 +19,7 @@ module.exports = {
     "^@/(.*)$": "$1"
   },
   collectCoverage: true,
+  coverageDirectory: 'coverage/jest',
   collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
   coverageReporters: ["html", "text-summary"],
 }
