@@ -1,8 +1,11 @@
 <template lang="pug">
-a(:href="href") {{ email }}
+a(:href="href")
+  span {{ email }}
+  i.far.fa-address-book
 </template>
 
 <script>
+// NOTE: scss、FontAwesomeのテストとして作成
 export default {
   props: {
     email: {
@@ -18,4 +21,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+$margin: 0.3em;
+
+a span {
+  margin-right: $margin;
+}
+</style>

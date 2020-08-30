@@ -1,5 +1,5 @@
 <template lang="pug">
-  UserForm(:user="user" @submit="submitForm" @destroy="destroyData")
+UserForm(:user="user" @submit="submitForm" @destroy="destroyData")
 </template>
 
 <script>
@@ -29,11 +29,21 @@ export default {
       if (id === "new") this.clear()
       else this.fetch({ id: id })
     },
-    submitForm: function (form) {
-      this.submit({ form: form })
+    submitForm: async function (form) {
+      await this.submit({ form: form })
+      this.$buefy.toast.open({
+        message: "Success",
+        type: "is-success",
+        position: "is-bottom",
+      })
     },
     destroyData: async function () {
       await this.destroy({ id: this.user.uuid })
+      this.$buefy.toast.open({
+        message: "Success",
+        type: "is-success",
+        position: "is-bottom",
+      })
       this.$router.push("/users")
     },
   },

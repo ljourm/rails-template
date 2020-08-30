@@ -1,5 +1,5 @@
 <template lang="pug">
-div 404 Not Found
+div Top Page
 </template>
 
 <script>

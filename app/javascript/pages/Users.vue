@@ -1,5 +1,11 @@
 <template lang="pug">
-  UserList(:users="users")
+div
+  .columns
+    .column
+      UserList(:users="users")
+  .columns
+    .column
+      router-link.button.is-link(to='/users/new') New
 </template>
 
 <script>

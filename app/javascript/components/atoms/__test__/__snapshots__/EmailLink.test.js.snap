@@ -4,6 +4,11 @@ exports[`Component snapshot 1`] = `
 <a
   href="mailto:test@example.com"
 >
-  test@example.com
+  <span>
+    test@example.com
+  </span>
+  <i
+    class="far fa-address-book"
+  />
 </a>
 `;

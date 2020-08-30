@@ -1,34 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component snapshot 1`] = `
-<div
-  class="user-list"
-  users="[object Object]"
->
-  <h2>
-    user-list
-  </h2>
-  <table
-    class="table is-striped is-fullwidth"
+<div>
+  <div
+    class="columns"
   >
-    <tr>
-      <td>
-        <a
-          class=""
-          href="#/users/uuid"
+    <div
+      class="column"
+    >
+      <div
+        class="user-list"
+        users="[object Object]"
+      >
+        <h2>
+          user-list
+        </h2>
+        <table
+          class="table is-striped is-fullwidth"
         >
-          name
-        </a>
-      </td>
-      <td>
-        <a
-          href="mailto:test@example.com"
-        >
-          test@example.com
-        </a>
-      </td>
-      <td />
-    </tr>
-  </table>
+          <tr>
+            <td>
+              <a
+                class=""
+                href="#/users/uuid"
+              >
+                name
+              </a>
+            </td>
+            <td>
+              <a
+                href="mailto:test@example.com"
+              >
+                <span>
+                  test@example.com
+                </span>
+                <i
+                  class="far fa-address-book"
+                />
+              </a>
+            </td>
+            <td />
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div
+    class="columns"
+  >
+    <div
+      class="column"
+    >
+      <a
+        class="button is-link"
+        href="#/users/new"
+      >
+        New
+      </a>
+    </div>
+  </div>
 </div>
 `;

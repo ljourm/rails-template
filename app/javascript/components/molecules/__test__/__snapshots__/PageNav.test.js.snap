@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<nav
+  aria-label="main navigation"
+  class="navbar"
+  role="navigation"
+>
+  <div
+    class="navbar-brand"
+  >
+    <router-link-stub
+      ariacurrentvalue="page"
+      event="click"
+      tag="a"
+      to="/"
+    >
+      <h1
+        class="title"
+      >
+        Rails Template
+      </h1>
+    </router-link-stub>
+  </div>
+  <div
+    class="navbar-menu"
+  >
+    <div
+      class="navbar-start"
+    >
+      <router-link-stub
+        ariacurrentvalue="page"
+        class="navbar-item"
+        event="click"
+        tag="a"
+        to="/users"
+      >
+        Users
+      </router-link-stub>
+    </div>
+    <div
+      class="navbar-end"
+    >
+      <div
+        class="navbar-item"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="navbar-item"
+          >
+            <b-button-stub
+              class="is-light"
+              nativetype="button"
+              tag="button"
+            >
+              Logout
+            </b-button-stub>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+`;

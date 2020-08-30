@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<div>
+  <div
+    class="loading"
+  >
+    loading: false
+  </div>
+  <div
+    class="path"
+  >
+    path: /
+  </div>
+  <div
+    class="id"
+  >
+    id: 
+  </div>
+  <div
+    class="error-message"
+  >
+    error-message 
+  </div>
+</div>
+`;
