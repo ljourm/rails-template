@@ -1,4 +1,4 @@
-import store from "./index"
+import store from "../index"
 
 const axios = require("axios")
 jest.mock("axios")

@@ -1,4 +1,4 @@
-import store from "."
+import store from "../index"
 
 describe("store", () => {
   test("store", () => {

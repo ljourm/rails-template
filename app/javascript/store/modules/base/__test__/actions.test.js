@@ -1,4 +1,4 @@
-import actions from "./actions"
+import actions from "../actions"
 
 import axios from "axios"
 jest.mock("axios")
