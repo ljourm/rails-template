@@ -1,13 +1,14 @@
-table style="width: 400px;"
-  tr
-    th Email
-    th name
-    th roles
-  tr
-  - @users.each do |user|
+table.table.is-striped.is-fullwidth
+  thead
     tr
-      td = user.email
-      td = user.user_info.name
-      td
-        - user.user_roles.each do |user_role|
-          div = user_role.role_i18n
+      th Email
+      th name
+      th roles
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.email
+        td = user.user_info.name
+        td
+          - user.user_roles.each do |user_role|
+            div = user_role.role_i18n

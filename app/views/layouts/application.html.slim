@@ -7,8 +7,25 @@ html
     = csp_meta_tag
     = favicon_link_tag '/favicon.ico'
     meta name='robots' content='noindex'
+    meta name='viewport' content='width=device-width, initial-scale=1'
 
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+
+    link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css'
   body
-    = yield
+    nav.navbar role='navigation' aria-label='main navigation'
+      .navbar-brand
+        a href='/'
+          h1.title Rails Template
+      - if user_signed_in?
+        .navbar-menu
+          .navbar-start
+            = link_to 'Users', users_path, class: 'navbar-item'
+          .navbar-end
+            .navbar-item
+              .buttons
+                = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'button is-light'
+    section.section
+      .container
+        = yield
