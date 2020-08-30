@@ -1,4 +1,4 @@
-import router from "."
+import router from "../index"
 
 describe("router", () => {
   test("router", () => {
