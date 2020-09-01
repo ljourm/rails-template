@@ -73,7 +73,9 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webdrivers'
-  gem 'capybara'
+  # https://github.com/teamcapybara/capybara/pull/2378 がリリースされるまでGitHubから取得
+  # gem 'capybara'
+  gem 'capybara', git: 'git://github.com/teamcapybara/capybara.git', ref: '237d76b9ffe330783509c83fc17dd3151f323d0f'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
 end
