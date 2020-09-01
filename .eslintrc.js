@@ -22,7 +22,7 @@ module.exports = {
     "semi": [2, "never"],
     "no-console": "off",
     "vue/max-attributes-per-line": "off",
-    "max-len": ["error", { "code": 100 }],
+    "max-len": ["error", { "code": 120 }],
     "vue/html-self-closing": ["error", {
       "html": {
         "void": "always",
