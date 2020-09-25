@@ -46,12 +46,12 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "eslint": "eslint --ext .vue --ext .js app/javascript",
-    "fixeslint": "eslint --fix --ext .vue --ext .js app/javascript",
-    "stylelint": "stylelint **/*.vue **/*.css **/*.scss",
-    "fixstylelint": "stylelint --fix **/*.vue **/*.css **/*.scss",
-    "alllint": "yarn eslint && yarn stylelint",
-    "fixlint": "yarn fixeslint && yarn fixstylelint",
+    "lint:js": "eslint --ext .vue --ext .js app/javascript",
+    "lint:js:fix": "eslint --fix --ext .vue --ext .js app/javascript",
+    "lint:style": "stylelint **/*.vue **/*.css **/*.scss",
+    "lint:style:fix": "stylelint --fix **/*.vue **/*.css **/*.scss",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lint:fix": "yarn lint:js:fix && yarn lint:style:fix",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
