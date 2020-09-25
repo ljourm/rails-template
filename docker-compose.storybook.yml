@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  storybook:
+    image: rails_template_app
+    ports:
+      - "6006:6006"
+    command: yarn storybook
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/app
+      - node_modules/:/app/node_modules
+volumes:
+  node_modules:

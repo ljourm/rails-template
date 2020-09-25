@@ -110,6 +110,16 @@ yarn alllint
 yarn fixlint
 ```
 
+## storybook
+
+vueブランチでのみ実行可能。
+
+```
+docker-compose -f docker-compose.storybook.yml -p sb run --rm storybook yarn
+docker-compose -f docker-compose.storybook.yml -p sb up -d
+# localhost:6006 にアクセス
+```
+
 ## Capistrano
 
 Docker上でstaging環境のデプロイをテストする場合

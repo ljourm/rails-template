@@ -15,10 +15,14 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/vue": "^6.0.21",
     "@vue/test-utils": "^1.0.0-beta.33",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.2.6",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-loader": "^3.0.3",
@@ -35,6 +39,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.16.0",
     "stylelint-webpack-plugin": "^1.2.3",
+    "vue-docgen-loader": "^1.5.0",
     "vue-jest": "^3.0.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
@@ -46,6 +51,8 @@
     "fixstylelint": "stylelint --fix **/*.vue **/*.css **/*.scss",
     "alllint": "yarn eslint && yarn stylelint",
     "fixlint": "yarn fixeslint && yarn fixstylelint",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
