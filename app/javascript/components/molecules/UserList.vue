@@ -12,15 +12,17 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
 import EmailLink from "components/atoms/EmailLink"
 
 export default {
   components: {
     EmailLink,
   },
-  computed: {
-    ...mapState("users", ["users"]),
+  props: {
+    users: {
+      type: Array,
+      required: true,
+    },
   },
 }
 </script>

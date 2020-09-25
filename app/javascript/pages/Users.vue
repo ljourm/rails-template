@@ -11,7 +11,7 @@ div
 <script>
 import { mapState, mapActions } from "vuex"
 
-import UserList from "components/lists/UserList"
+import UserList from "components/molecules/UserList"
 
 export default {
   components: {

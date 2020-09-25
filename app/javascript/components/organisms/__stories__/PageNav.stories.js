@@ -1,7 +1,7 @@
 import PageNav from "../PageNav"
 
 export default {
-  title: "Molecules/PageNav",
+  title: "Organisms/PageNav",
   component: PageNav,
 }
 

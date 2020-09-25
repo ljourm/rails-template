@@ -10,7 +10,6 @@ exports[`Component snapshot 1`] = `
     >
       <div
         class="user-list"
-        users="[object Object]"
       >
         <h2>
           user-list

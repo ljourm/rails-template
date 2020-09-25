@@ -15,7 +15,7 @@ section.section
 </template>
 
 <script>
-import PageNav from "components/molecules/PageNav"
+import PageNav from "components/organisms/PageNav"
 import DebugPanel from "components/organisms/DebugPanel"
 
 export default {
