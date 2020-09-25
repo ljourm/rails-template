@@ -20,6 +20,6 @@ module.exports = {
   },
   collectCoverage: true,
   coverageDirectory: 'coverage/jest',
-  collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
+  collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**", "!**/__stories__/**"],
   coverageReporters: ["html", "text-summary"],
 }
