@@ -16,6 +16,12 @@ module.exports = {
         include: path.resolve(__dirname, "../"),
       }
     )
+
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, '../app/javascript'),
+    ]
+
     return config
   },
 }
