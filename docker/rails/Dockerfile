@@ -20,6 +20,10 @@ RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+RUN cd /usr/local/share/fonts/ \
+ && wget -q "https://github.com/googlei18n/noto-cjk/blob/master/NotoSansCJKsc-Medium.otf?raw=true" \
+ && fc-cache -f -v
+
 RUN gem install bundler -v $BUNDLER_VERSION
 
 RUN mkdir $APP_ROOT
