@@ -14,6 +14,7 @@ exports[`Component snapshot 1`] = `
       class="control"
     >
       <input
+        aria-label="name"
         class="input"
         name="name"
         type="text"
@@ -32,6 +33,7 @@ exports[`Component snapshot 1`] = `
       class="control"
     >
       <input
+        aria-label="email"
         class="input"
         name="email"
         type="text"
@@ -50,6 +52,7 @@ exports[`Component snapshot 1`] = `
       class="control"
     >
       <input
+        aria-label="password"
         class="input"
         name="password"
         type="password"
@@ -68,6 +71,7 @@ exports[`Component snapshot 1`] = `
       class="control"
     >
       <input
+        aria-label="password_confirmation"
         class="input"
         name="password_confirmation"
         type="password"
