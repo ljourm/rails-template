@@ -7,9 +7,9 @@ Railsアプリのスタートアップの際にテンプレートとして使用
 ## 構成
 
 - Ruby 2.6.6
-- Rails 6.0.1
+- Rails 6.1.2
 - PostgreSQL 12.2
-- Webpack 4.41.2
+- Webpack 4.45.0
 
 ## ブランチ構成
 
