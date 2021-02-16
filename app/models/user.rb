@@ -11,15 +11,15 @@ class User < ApplicationRecord
 
   validates :user_info, presence: true
 
-  def role?(role)
-    user_roles.exists?(role: role)
+  def role?(name)
+    user_roles.exists?(name: name)
   end
 
   def roles
-    user_roles.map { |user_role| user_role.role.to_sym }
+    user_roles.map { |user_role| user_role.name.to_sym }
   end
 
   def roles_i18n
-    user_roles.map(&:role_i18n)
+    user_roles.map(&:name_i18n)
   end
 end

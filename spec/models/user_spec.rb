@@ -15,13 +15,13 @@ RSpec.describe User, type: :model do
   end
 
   describe '#role?' do
-    subject { user.role?(role_name) }
+    subject { user.role?(name) }
 
-    let(:role_name) { :role_management }
+    let(:name) { :role_management }
 
     context 'has role' do
       let(:user) { create(:user, :with_info, user_roles: [user_role]) }
-      let(:user_role) { build(:user_role, role: role_name) }
+      let(:user_role) { build(:user_role, name: name) }
 
       it { is_expected.to be(true) }
     end

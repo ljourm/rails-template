@@ -1,14 +1,14 @@
 class UserRole < ApplicationRecord
   include BaseFriendlyId
 
-  ROLES = {
+  NAMES = {
     role_management: 0,
     user_management: 1,
   }.freeze
 
-  enum role: ROLES
+  enum name: NAMES
 
   belongs_to :user
 
-  validates :role, presence: true
+  validates :name, presence: true
 end
