@@ -10,4 +10,16 @@ class User < ApplicationRecord
   has_many :user_roles, dependent: :destroy
 
   validates :user_info, presence: true
+
+  def role?(role)
+    user_roles.exists?(role: role)
+  end
+
+  def roles
+    user_roles.map { |user_role| user_role.role.to_sym }
+  end
+
+  def roles_i18n
+    user_roles.map(&:role_i18n)
+  end
 end
