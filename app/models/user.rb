@@ -22,4 +22,19 @@ class User < ApplicationRecord
   def roles_i18n
     user_roles.map(&:name_i18n)
   end
+
+  def replace_roles!(names)
+    source = roles.to_set
+    dest = names.map(&:to_sym).to_set
+
+    user_roles.where(name: (source - dest)).each do |user_role|
+      user_role.destroy!
+    end
+
+    (dest - source).each do |name|
+      user_roles.create!(name: name)
+    end
+
+    dest
+  end
 end
