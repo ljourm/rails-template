@@ -18,6 +18,7 @@ module RailsTemplate
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators.system_tests = nil
 
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
