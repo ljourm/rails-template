@@ -1,5 +1,7 @@
 # Rails Template
 
+[![ci](https://github.com/ljourm/rails-template/workflows/ci/badge.svg)](https://github.com/ljourm/rails-template/actions)
+
 Railsアプリのスタートアップの際にテンプレートとして使用することを想定したプロジェクト。
 
 ## 構成
