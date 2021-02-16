@@ -40,8 +40,8 @@ jobs:
       run: bundle install --path vendor/bundle --deployment --without production development
     - name: Install npm dependencies
       run: yarn install --production --frozen-lockfile
-    # - name: Run assets precompile
-    #   run: bundle exec rails assets:precompile RAILS_ENV=test
+    - name: Run assets precompile
+      run: bundle exec rails assets:precompile RAILS_ENV=test
     - name: DB setup
       run: |
         bundle exec rails db:create RAILS_ENV=test
