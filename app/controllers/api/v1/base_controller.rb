@@ -1,3 +1,4 @@
+# rubocop:disable Naming/VariableNumber
 class Api::V1::BaseController < AuthenticatedController
   rescue_from StandardError,                      with: :_render_500
   rescue_from ActiveRecord::RecordInvalid,        with: :_render_422
@@ -40,3 +41,4 @@ class Api::V1::BaseController < AuthenticatedController
     render json: { error: '400 bad request' }, status: :bad_request
   end
 end
+# rubocop:enable Naming/VariableNumber
