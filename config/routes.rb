@@ -17,6 +17,8 @@ Rails.application.routes.draw do
           delete :sessions, to: 'users/sessions#destroy'
         end
       end
+
+      resources :roles, only: %i[index]
     end
   end
 end
