@@ -10,6 +10,6 @@ RSpec.describe UserRole, type: :model do
   end
 
   it 'validations' do
-    is_expected.to validate_presence_of(:role)
+    is_expected.to validate_presence_of(:name)
   end
 end

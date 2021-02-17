@@ -1,6 +1,6 @@
 ja:
   enums:
     user_role:
-      role:
+      name:
         user_management: ユーザー管理
         role_management: ロール管理

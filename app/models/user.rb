@@ -11,15 +11,30 @@ class User < ApplicationRecord
 
   validates :user_info, presence: true
 
-  def role?(role)
-    user_roles.exists?(role: role)
+  def role?(name)
+    user_roles.exists?(name: name)
   end
 
   def roles
-    user_roles.map { |user_role| user_role.role.to_sym }
+    user_roles.map { |user_role| user_role.name.to_sym }
   end
 
   def roles_i18n
-    user_roles.map(&:role_i18n)
+    user_roles.map(&:name_i18n)
+  end
+
+  def replace_roles!(names)
+    source = roles.to_set
+    dest = names.map(&:to_sym).to_set
+
+    user_roles.where(name: (source - dest)).each do |user_role|
+      user_role.destroy!
+    end
+
+    (dest - source).each do |name|
+      user_roles.create!(name: name)
+    end
+
+    dest
   end
 end

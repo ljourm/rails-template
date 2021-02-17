@@ -9,7 +9,7 @@ FactoryBot.define do
     end
 
     trait :with_all_roles do
-      user_roles { UserRole::ROLES.keys.map { |role| build(:user_role, role: role) } }
+      user_roles { UserRole::NAMES.map { |name| build(:user_role, name: name) } }
     end
   end
 end
