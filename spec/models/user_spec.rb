@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
       end
 
       context '1 -> 1 (same role)' do
-        let(:names) { %i(user_management) }
+        let(:names) { %i[user_management] }
 
         it do
           expect(user.roles).to match_array names
@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
       end
 
       context '1 -> 1 (different role)' do
-        let(:names) { %i(role_management) }
+        let(:names) { %i[role_management] }
 
         it { expect(user.roles).to match_array names }
       end
@@ -90,11 +90,11 @@ RSpec.describe User, type: :model do
 
     describe 'abnormal' do
       context 'invalid role name' do
-        let(:names) { %i(invalid) }
+        let(:names) { %i[invalid] }
 
         it do
           expect { subject }.to raise_error(ArgumentError)
-          expect(user.roles).to match_array %i(user_management)
+          expect(user.roles).to match_array %i[user_management]
           expect(user.user_roles.first).to eq user_role
         end
       end
