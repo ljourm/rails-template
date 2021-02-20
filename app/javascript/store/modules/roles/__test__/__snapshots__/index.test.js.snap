@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store snapshot 1`] = `
+Object {
+  "actions": Object {
+    "fetch": [Function],
+  },
+  "mutations": Object {
+    "SET_ROLES": [Function],
+  },
+  "namespaced": true,
+  "state": Object {
+    "roles": Array [],
+  },
+}
+`;

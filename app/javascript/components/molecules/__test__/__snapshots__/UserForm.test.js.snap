@@ -79,6 +79,92 @@ exports[`Component test 1`] = `
     </div>
   </div>
   <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      ロール
+    </label>
+    <div
+      class="control"
+    >
+      <div
+        class="taginput control roles"
+      >
+        <div
+          class="taginput-container is-focusable"
+        >
+          <span
+            class="tag"
+          >
+            <span
+              class=""
+            >
+              
+                        ロール管理
+                    
+            </span>
+             
+            <a
+              class="delete is-small"
+              role="button"
+            />
+          </span>
+           
+          <div
+            class="autocomplete control"
+          >
+            <div
+              class="control has-icons-left is-clearfix"
+            >
+              <input
+                autocomplete="off"
+                class="input"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <span
+                class="icon is-left"
+              >
+                <i
+                  class="mdi mdi-label mdi-24px"
+                />
+              </span>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <transition-stub
+              name="fade"
+            >
+              <div
+                class="dropdown-menu"
+                style="display: none;"
+              >
+                <div
+                  class="dropdown-content"
+                  style="display: none;"
+                >
+                  <!---->
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </transition-stub>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div
     class="field is-grouped"
   >
     <div

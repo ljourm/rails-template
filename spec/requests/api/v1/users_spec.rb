@@ -53,6 +53,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
             password: request_password,
             password_confirmation: request_password,
             name: request_name,
+            roles: request_roles,
           },
         }
       end
@@ -62,13 +63,14 @@ RSpec.describe 'Api::V1::Users', type: :request do
             'uuid' => User.last.uuid,
             'email' => request_email,
             'name' => request_name,
-            'roles' => [],
+            'roles' => request_roles,
           },
         }
       end
       let(:request_email) { 'request@example.com' }
       let(:request_password) { 'password' }
       let(:request_name) { 'test name' }
+      let(:request_roles) { ['user_management'] }
 
       it do
         expect { request }.to change(User, :count).by(1) &
@@ -86,6 +88,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
             password: '',
             password_confirmation: '',
             name: '',
+            roles: [],
           },
         }
       end
@@ -119,6 +122,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
             password: request_password,
             password_confirmation: request_password,
             name: request_name,
+            roles: request_roles,
           },
         }
       end
@@ -128,13 +132,14 @@ RSpec.describe 'Api::V1::Users', type: :request do
             'uuid' => user.uuid,
             'email' => request_email,
             'name' => request_name,
-            'roles' => [],
+            'roles' => request_roles,
           },
         }
       end
       let(:request_email) { 'request@example.com' }
       let(:request_password) { 'password' }
       let(:request_name) { 'test name' }
+      let(:request_roles) { ['user_management'] }
 
       it do
         expect { request }.to change(User, :count).by(0) &
@@ -152,6 +157,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
             password: '',
             password_confirmation: '',
             name: '',
+            roles: [],
           },
         }
       end
