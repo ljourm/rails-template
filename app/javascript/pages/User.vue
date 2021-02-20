@@ -1,5 +1,5 @@
 <template lang="pug">
-UserForm(:user="user" @submit="submitForm" @destroy="destroyData")
+UserForm(:user="user" :roles="roles" @submit="submitForm" @destroy="destroyData")
 </template>
 
 <script>
@@ -22,10 +22,14 @@ export default {
   },
   computed: {
     ...mapState("user", ["user"]),
+    ...mapState("roles", ["roles"]),
   },
   methods: {
     ...mapActions("user", ["fetch", "submit", "destroy", "clear"]),
+    ...mapActions("roles", { fetch_roles: "fetch" }),
     fetchForm: function (id) {
+      this.fetch_roles()
+
       if (id === "new") this.clear()
       else this.fetch({ id: id })
     },

@@ -79,6 +79,28 @@ exports[`Component test 1`] = `
     </div>
   </div>
   <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      ロール
+    </label>
+    <div
+      class="control"
+    >
+      <b-taginput
+        allow-new="true"
+        autocomplete="autocomplete"
+        data=""
+        field="name"
+        icon="label"
+        open-on-focus="true"
+        readonly="true"
+      />
+    </div>
+  </div>
+  <div
     class="field is-grouped"
   >
     <div

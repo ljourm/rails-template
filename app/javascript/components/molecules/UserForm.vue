@@ -21,6 +21,19 @@
           name="password_confirmation",
           aria-label="password_confirmation"
         )
+    .field
+      label.label ロール
+      .control
+        b-taginput(
+          v-model="selectedRoles",
+          :data="options"
+          autocomplete,
+          :allow-new="true"
+          :open-on-focus="true"
+          :readonly="true"
+          field="name"
+          icon="label",
+        )
     .field.is-grouped
       .control
         button.button.is-primary.submit(type="submit") 送信
@@ -35,10 +48,16 @@ export default {
       type: Object,
       required: true,
     },
+    roles: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
       form: {},
+      selectedRoles: [],
+      options: [],
     }
   },
   watch: {
@@ -46,7 +65,26 @@ export default {
       immediate: true,
       handler(value) {
         this.form = JSON.parse(JSON.stringify(value))
+
+        if (this.form.roles) {
+          this.selectedRoles = this.form.roles.map((roleKey) => {
+            return this.roles.find((role) => {
+              return role.key === roleKey
+            })
+          })
+        }
       },
+    },
+    selectedRoles: function () {
+      this.form.roles = this.selectedRoles.map((role) => {
+        return role.key
+      })
+
+      this.options = this.roles.filter((role) => {
+        return !this.selectedRoles.find((selectedRole) => {
+          return selectedRole.key === role.key
+        })
+      })
     },
   },
   methods: {
