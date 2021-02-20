@@ -4,7 +4,8 @@ RSpec.describe '/users', type: :system, js: true do
   subject { page }
 
   let(:login_user) { create(:user, :with_info) }
-  let(:user) { create(:user, :with_info) }
+  let(:user) { create(:user, :with_info, user_roles: [user_role]) }
+  let(:user_role) { build(:user_role, name: 'role_management') }
 
   before do
     sign_in login_user
@@ -24,6 +25,10 @@ RSpec.describe '/users', type: :system, js: true do
 
       is_expected.to have_content('パスワード確認')
       is_expected.to have_field('password_confirmation', with: '')
+
+      is_expected.to have_content('ロール')
+      is_expected.to have_content('ロール管理')
+      is_expected.not_to have_content('ユーザ管理')
     end
   end
 
@@ -35,6 +40,16 @@ RSpec.describe '/users', type: :system, js: true do
       fill_in 'name', with: name
       fill_in 'email', with: email
 
+      # ロール管理を削除
+      find('.roles a.delete').click
+
+      # ユーザ管理を追加
+      find('.roles input').click
+      find('.roles a.dropdown-item:nth-child(2)').click
+
+      # 適当なところをクリックしてロールの選択肢を消す
+      find('input[name="name"]').click
+
       click_on('送信')
     end
 
@@ -43,6 +58,8 @@ RSpec.describe '/users', type: :system, js: true do
 
       is_expected.to have_content(name)
       is_expected.to have_content(email)
+      is_expected.to have_content('ユーザー管理')
+      is_expected.not_to have_content('ロール管理')
     end
   end
 

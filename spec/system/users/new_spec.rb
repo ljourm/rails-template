@@ -36,6 +36,10 @@ RSpec.describe '/users', type: :system, js: true do
       fill_in 'password', with: 'password'
       fill_in 'password_confirmation', with: 'password'
 
+      find('.roles input').click
+      find('.roles .dropdown-item:nth-child(1)').click # roles[0] の選択
+      find('.roles .dropdown-item:nth-child(1)').click # roles[1] の選択 (1件目が消えたため繰り上がる)
+
       click_on('送信')
     end
 
@@ -44,6 +48,8 @@ RSpec.describe '/users', type: :system, js: true do
 
       is_expected.to have_content(name)
       is_expected.to have_content(email)
+      is_expected.to have_content('ユーザー管理')
+      is_expected.to have_content('ロール管理')
     end
   end
 end

@@ -10,14 +10,24 @@ class Api::V1::UsersController < Api::V1::BaseController
   def create
     @user = User.new(user_params)
     @user.build_user_info(user_info_params)
-    @user.save!
+
+    User.transaction do
+      @user.save!
+      @user.replace_roles!(user_role_params[:roles])
+    end
+
     render :show
   end
 
   def update
     @user.assign_attributes(user_params)
     @user.user_info.assign_attributes(user_info_params)
-    @user.save!
+
+    User.transaction do
+      @user.save!
+      @user.replace_roles!(user_role_params[:roles])
+    end
+
     render :show
   end
 
@@ -42,6 +52,12 @@ class Api::V1::UsersController < Api::V1::BaseController
   def user_info_params
     params.require(:user).permit(
       :name,
+    )
+  end
+
+  def user_role_params
+    params.require(:user).permit(
+      roles: [],
     )
   end
 end

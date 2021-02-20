@@ -33,6 +33,8 @@ class User < ApplicationRecord
       user_roles.create!(name: name)
     end
 
+    user_roles.reload
+
     dest
   end
 end
